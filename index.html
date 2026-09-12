@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>I'm Sorry ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+            overflow: hidden;
+        }
+
+        .card {
+            width: 90%;
+            max-width: 420px;
+            background: white;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 25px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 2;
+        }
+
+        .heart {
+            font-size: 65px;
+            animation: beat 1s infinite;
+        }
+
+        @keyframes beat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        h1 {
+            color: #e91e63;
+            margin: 15px 0;
+            font-size: 35px;
+        }
+
+        p {
+            color: #555;
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .sorry {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d81b60;
+            margin-bottom: 15px;
+        }
+
+        button {
+            border: none;
+            padding: 13px 28px;
+            border-radius: 30px;
+            background: #e91e63;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            background: #c2185b;
+        }
+
+        #message {
+            display: none;
+            margin-top: 20px;
+            color: #e91e63;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .floating-heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 25px;
+            animation: float 6s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+        }
+
+        .h1 { left: 10%; animation-delay: 1s; }
+        .h2 { left: 30%; animation-delay: 3s; }
+        .h3 { left: 55%; animation-delay: 0s; }
+        .h4 { left: 80%; animation-delay: 2s; }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div class="floating-heart h1">❤️</div>
+    <div class="floating-heart h2">💕</div>
+    <div class="floating-heart h3">❤️</div>
+    <div class="floating-heart h4">💗</div>
+
+    <div class="card">
+
+        <div class="heart">❤️</div>
+
+        <h1>I'm Sorry</h1>
+
+        <div class="sorry">
+            Please forgive me 🥺
+        </div>
+
+        <p>
+            I know you're angry with me, and I'm really sorry
+            if I hurt you in any way.
+        </p>
+
+        <p>
+            I never wanted to make you feel bad.
+            Your feelings are important to me.
+        </p>
+
+        <p>
+            Can we please talk when you're ready? ❤️
+        </p>
+
+        <button onclick="showMessage()">
+            Click Here 💕
+        </button>
+
+        <div id="message">
+            Thank you for reading this ❤️<br>
+            I really hope you can forgive me. 🥺
+        </div>
+
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
