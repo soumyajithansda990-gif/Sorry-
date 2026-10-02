@@ -1,0 +1,62 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class BouncingBall extends JPanel {
+
+    int x = 50;
+    int y = 50;
+
+    int dx = 4;
+    int dy = 4;
+
+    int ballSize = 50;
+
+    public BouncingBall() {
+        Timer timer = new Timer(16, e -> {
+            x += dx;
+            y += dy;
+
+            // Left & Right
+            if (x <= 0 || x + ballSize >= getWidth()) {
+                dx = -dx;
+            }
+
+            // Top & Bottom
+            if (y <= 0 || y + ballSize >= getHeight()) {
+                dy = -dy;
+            }
+
+            repaint();
+        });
+
+        timer.start();
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        // Background
+        g.setColor(Color.BLACK);
+        g.fillRect(0, 0, getWidth(), getHeight());
+
+        // Ball
+        g.setColor(Color.CYAN);
+        g.fillOval(x, y, ballSize, ballSize);
+    }
+
+    public static void main(String[] args) {
+
+        JFrame frame = new JFrame("Java Animation");
+
+        BouncingBall animation = new BouncingBall();
+
+        frame.add(animation);
+
+        frame.setSize(800, 500);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+
+        frame.setVisible(true);
+    }
+}
